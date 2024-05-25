@@ -68,13 +68,13 @@ def main():
         if st.button('Predict'):
             # Create a DataFrame with the entered values
             data = pd.DataFrame({'RevolvingUtilizationOfUnsecuredLines': [revolving_utilization],
-                                 'age': [age],
-                                 'DebtRatio': [debt_ratio],
-                                 'MonthlyIncome': [monthly_income],
-                                 'NumberOfOpenCreditLinesAndLoans': [open_credit_lines_loans],
-                                 'NumberRealEstateLoansOrLines': [real_estate_loans],
-                                 'NumberOfDependents': [dependents],
-                                 'TotalDelinquencies90DaysLate': [delinquencies_90_days]})
+                                 'age': [Usia],
+                                 'DebtRatio': [Rasio_Hutang],
+                                 'MonthlyIncome': [Pendapatan_Bulanan],
+                                 'NumberOfOpenCreditLinesAndLoans': [Pinjaman_kredit],
+                                 'NumberRealEstateLoansOrLines': [Pinjaman_Properti],
+                                 'NumberOfDependents': [Pihak_Tertanggung],
+                                 'TotalDelinquencies90DaysLate': [Tunggakan_Selama_90_Hari]})
 
             # Preprocess the data
             preprocessed_data = preprocess_data(data)
