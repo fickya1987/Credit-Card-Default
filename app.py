@@ -6,7 +6,7 @@ from sklearn.impute import SimpleImputer
 import xgboost as xgb
 
 def main():
-    st.title('Credit Risk Prediction')
+    st.title('Prediksi Resiko Kredit Pelanggan/Nasabah')
 
     # Load the saved model
     # model = joblib.load('saved_model.pkl')
@@ -15,7 +15,7 @@ def main():
 
     # Create sidebar with option to upload csv or manually input the fields
     st.sidebar.subheader('Data Input')
-    input_option = st.sidebar.radio('Select Input Option', ('Upload CSV', 'Enter Manually'))
+    input_option = st.sidebar.radio('Pilih Opsi', ('Upload CSV', 'Input Parameter'))
 
     if input_option == 'Upload CSV':
         # File upload option 
@@ -55,15 +55,15 @@ def main():
             st.write(predictions_df)
     else:
         # Manual entry option
-        st.subheader('Enter Customer Information')
-        revolving_utilization = st.number_input('Revolving Utilization of Unsecured Lines', min_value=0, value=0)
-        age = st.number_input('Age', min_value=0, value=0)
-        debt_ratio = st.number_input('Debt Ratio', min_value=0.0, value=0.0)
-        monthly_income = st.number_input('Monthly Income', min_value=0.0, value=0.0)
-        open_credit_lines_loans = st.number_input('Number of Open Credit Lines and Loans', min_value=0, value=0)
-        real_estate_loans = st.number_input('Number of Real Estate Loans or Lines', min_value=0, value=0)
-        dependents = st.number_input('Number of Dependents', min_value=0, value=0)
-        delinquencies_90_days = st.number_input('Total Delinquencies in the Last 90 Days', min_value=0, value=0)
+        st.subheader('Masukkan Informasi Pelanggan/Nasabah')
+        revolving_utilization = st.number_input('Penggunaan Bergulir dari Jalur Kredit Tanpa Jaminan', min_value=0, value=0)
+        Usia = st.number_input('Usia', min_value=0, value=0)
+        Rasio_Hutang = st.number_input('Rasio Hutang', min_value=0.0, value=0.0)
+        Pendapatan_Bulanan = st.number_input('Pendapatan Bulanan', min_value=0.0, value=0.0)
+        Pinjaman_Kredit = st.number_input('Jumlah Jalur Kredit dan Pinjaman yang Terbuka', min_value=0, value=0)
+        Pinjaman_Properti = st.number_input('Pinjaman Properti', min_value=0, value=0)
+        Pihak_Tertanggung = st.number_input('Pihak Tertanggung', min_value=0, value=0)
+        Tunggakan_Selama_90_Hari = st.number_input('Tunggakan Selama 90 Hari', min_value=0, value=0)
 
         if st.button('Predict'):
             # Create a DataFrame with the entered values
